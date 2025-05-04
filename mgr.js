@@ -1,18 +1,18 @@
-// NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE 
-// NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE 
-// This is not the correct example. It is a legacy on how to use the 0.* datapipe version.
-// NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE 
-// NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE 
+define(['managerAPI',
+		'https://cdn.jsdelivr.net/gh/minnojs/minno-datapipe@1.*/datapipe.min.js'], function(Manager){
 
 
-define(['managerAPI', 'https://cdn.jsdelivr.net/gh/minnojs/minno-datapipe@0.*/datapipe.min.js'], function(Manager) {
-    let API = new Manager();
+	//You can use the commented-out code to get parameters from the URL.
+	//const queryString = window.location.search;
+    //const urlParams = new URLSearchParams(queryString);
+    //const pt = urlParams.get('pt');
+
+	var API    = new Manager();
+	//const subid = Date.now().toString(16)+Math.floor(Math.random()*10000).toString(16);
+	init_data_pipe(API, 'zpjKaPesdEOI',  {file_type:'csv'});	
 
     API.setName('mgr');
     API.addSettings('skip',true);
-
-	//Replace the 2nd argument with your DataPipe Experiment ID
-	init_data_pipe(API, 'DATAPIPEEXPERIMENTID', 'csv'); 
 
     //Randomly select which of two sets of category labels to use.
     let raceSet = API.shuffle(['a','b'])[0];
@@ -106,9 +106,11 @@ define(['managerAPI', 'https://cdn.jsdelivr.net/gh/minnojs/minno-datapipe@0.*/da
         redirect:
         [{ 
 			//Replace with any URL you need to put at the end of your study, or just remove this task from the sequence below
-            type:'redirect', name:'redirecting', url: 'https://www.google.com' 
-        }]
-
+            type:'redirect', name:'redirecting', url: 'https://www.google.com/search' 
+        }],
+		
+		//This task waits until the data are sent to the server.
+        uploading: uploading_task({header: 'just a moment', body:'Please wait, sending data... '})
     });
 
     API.addSequence([
@@ -169,6 +171,7 @@ define(['managerAPI', 'https://cdn.jsdelivr.net/gh/minnojs/minno-datapipe@0.*/da
             ]
         },
 
+		{inherit: 'uploading'},
         {inherit: 'lastpage'},
         {inherit: 'redirect'}
     ]);
