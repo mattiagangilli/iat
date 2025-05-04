@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>IAT</title>
+        <script src="https://unpkg.com/jspsych@8.2.1"></script>
+        <script src="https://unpkg.com/@jspsych/plugin-iat-html@2.1.0"></script>
+        <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@2.1.0"></script>
+        <link href="https://unpkg.com/jspsych@8.2.1/css/jspsych.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body></body>
+    <script>
+        function createGeneralInstructions(experimentNumber, leftCategory, rightCategory) {
+            return {
+                type: jsPsychHtmlKeyboardResponse,
+                stimulus: `
+                    
+                    <p>Experiment number ${experimentNumber} of 5</p>
+                    <p>In this experiment, you will see a series of words on the screen.</p>
+                    <p>Your task is to categorize each word as either the left category or the right category.</p>
+                    <p>The left and right categories are: <strong>${leftCategory}</strong> and <strong>${rightCategory}</strong>.</p>
+                    <p>Press the <strong>e</strong> key if the word belongs to the left category (<strong>${leftCategory}</strong>).</p>
+                    <p>Press the <strong>i</strong> key if the word belongs to the right category (<strong>${rightCategory}</strong>).</p>
+                    <p>Press any key to begin.</p>
+                `,
+                post_trial_gap: 1000
+            };
+        }
+    
+        function createTrials(esperimento, stimuli) {
+            return stimuli.map(stimulus => ({
+                type: jsPsychIatHtml,
+                stimulus: stimulus.stimulus,
+                stim_key_association: stimulus.label,
+                html_when_wrong: '<span style="color: red; font-size: 80px">X</span>',
+                bottom_instructions: '<p>If you press the wrong key, a red X will appear. Press the other key to continue</p>',
+                force_correct_key_press: true,
+                display_feedback: true,
+                trial_duration: 3000, // Only if display_feedback is false
+                left_category_key: 'e',
+                right_category_key: 'i',
+                left_category_label: esperimento.left,
+                right_category_label: esperimento.right,
+                response_ends_trial: true
+            }));
+        }
+    
+        const jsPsych = initJsPsych({
+            on_finish: function() {
+                var results = jsPsych.data.results.trials;
+                console.log(results);
+            }
+        });
+        
+        var timeline = [
+            { type: jsPsychHtmlKeyboardResponse, stimulus: "<h1>Implicit Association Test</h1>Welcome to the experiment. Press any key to begin." }
+        ];
+    
+        const experiments = [
+
+            // STEP 1
+            { 
+                left: ['Giovane'], 
+                right: ['Vecchio'], 
+                stimuli: [
+                    { stimulus: 'dinamico', label: 'left' }, 
+                    { stimulus: 'nonno', label: 'right' },
+                    { stimulus: 'bambino', label: 'left' }, 
+                    { stimulus: 'saggio', label: 'right' }, 
+                    { stimulus: 'rudere', label: 'right' },
+                    { stimulus: 'allievo', label: 'left' }, 
+                    { stimulus: 'ragazzo', label: 'left' }, 
+                    { stimulus: 'novellino', label: 'left' }, 
+                    { stimulus: 'veterano', label: 'right' }, 
+                    { stimulus: 'antenato', label: 'right' }
+                ] 
+            },
+
+            // STEP 2
+            { 
+                left: ['Piacevole'], 
+                right: ['Spiacevole'], 
+                stimuli: [
+                    { stimulus: 'felice', label: 'left' }, 
+                    { stimulus: 'triste', label: 'right' },
+                    { stimulus: 'sorriso', label: 'left' }, 
+                    { stimulus: 'musica', label: 'left' },
+                    { stimulus: 'buio', label: 'right' },
+                    { stimulus: 'luce', label: 'left' }, 
+                    { stimulus: 'profumo', label: 'left' },
+                    { stimulus: 'lacrima', label: 'right' },
+                    { stimulus: 'malattia', label: 'right' },
+                    { stimulus: 'freddo', label: 'right' }
+                ] 
+            },
+
+            // STEP 3
+            { 
+                left: ['Giovane', 'Piacevole'], 
+                right: ['Vecchio', 'Spiacevole'], 
+                stimuli: [
+                    { stimulus: 'profumo', label: 'left' }, 
+                    { stimulus: 'antenato', label: 'right' },
+                    { stimulus: 'bambino', label: 'left' }, 
+                    { stimulus: 'malattia', label: 'right' },
+                    { stimulus: 'triste', label: 'right' },
+                    { stimulus: 'sorriso', label: 'left' }, 
+                    { stimulus: 'rudere', label: 'right' },
+                    { stimulus: 'saggio', label: 'right' },
+                    { stimulus: 'ragazzo', label: 'left' },
+                    { stimulus: 'luce', label: 'left' }
+                ] 
+            },
+
+            // STEP 4
+            { 
+                left: ['Vecchio'], 
+                right: ['Giovane'], 
+                stimuli: [
+                    { stimulus: 'veterano', label: 'left' }, 
+                    { stimulus: 'nonno', label: 'left' },
+                    { stimulus: 'antenato', label: 'left' },
+                    { stimulus: 'ragazzo', label: 'right' },
+                    { stimulus: 'saggio', label: 'left' },
+                    { stimulus: 'bambino', label: 'right' },
+                    { stimulus: 'dinamico', label: 'right' },
+                    { stimulus: 'rudere', label: 'left' },
+                    { stimulus: 'novellino', label: 'right' },
+                    { stimulus: 'allievo', label: 'right' }
+                ] 
+            },
+
+            // STEP 5
+            { 
+                left: ['Vecchio', 'Piacevole'], 
+                right: ['Giovane', 'Spiacevole'],  
+                stimuli: [
+                    { stimulus: 'luce', label: 'left' }, 
+                    { stimulus: 'dinamico', label: 'right' },
+                    { stimulus: 'musica', label: 'left' }, 
+                    { stimulus: 'novellino', label: 'right' },
+                    { stimulus: 'antenato', label: 'left' }, 
+                    { stimulus: 'profumo', label: 'left' }, 
+                    { stimulus: 'malattia', label: 'right' },
+                    { stimulus: 'saggio', label: 'left' },
+                    { stimulus: 'triste', label: 'right' },
+                    { stimulus: 'allievo', label: 'right' }
+                ] 
+            }
+        ];
+        
+        experiments.forEach((exp, index) => {
+            timeline.push(createGeneralInstructions(index + 1, exp.left.join(", "), exp.right.join(", ")));
+            timeline.push(...createTrials(exp, exp.stimuli));
+        });
+    
+        jsPsych.run(timeline);
+    </script>
+    
+    
+</html>
