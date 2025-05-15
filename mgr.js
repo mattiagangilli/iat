@@ -47,14 +47,14 @@ define(['managerAPI',
             'Celebrare', 'Divertirsi', 'Magnifico', 'Trionfo'
         ]), 
         negWords : API.shuffle([
-            'Abuse', 'Grief', 'Poison', 'Sadness', 
-            'Pain', 'Despise', 'Failure', 'Nasty', 
-            'Angry', 'Detest', 'Horrible', 'Negative', 
-            'Ugly', 'Dirty', 'Gross', 'Evil', 
-            'Rotten','Annoy', 'Disaster', 'Horrific',  
-            'Scorn', 'Awful', 'Disgust', 'Hate', 
-            'Humiliate', 'Selfish', 'Tragic', 'Bothersome', 
-            'Hatred', 'Hurtful', 'Sickening', 'Yucky'
+            'Abuso', 'Lutto', 'Veleno', 'Tristezza', 
+            'Dolore', 'Disprezzare', 'Fallimento', 'Sgradevole', 
+            'Arrabbiato', 'Detestare', 'Orribile', 'Negativo', 
+            'Brutto', 'Sporco', 'Schifoso', 'Malvagio', 
+            'Marcio','Infastidire', 'Disastro', 'Terrificante',  
+            'Disprezzo', 'Terribile', 'Disgusto', 'Odiare', 
+            'Umiliare', 'Egoista', 'Tragico', 'Fastidioso', 
+            'Odio', 'Doloroso', 'Nauseante', 'Rivoltante'
         ])
     });
 
@@ -65,7 +65,7 @@ define(['managerAPI',
         }],
 
         intro: [{
-            inherit: 'instructions',
+            inherit: 'istruzioni',
             name: 'intro',
             templateUrl: 'intro.jst',
             title: 'Intro',
