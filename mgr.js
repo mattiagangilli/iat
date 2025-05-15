@@ -20,11 +20,11 @@ define(['managerAPI',
     let whiteLabels = [];
 
     if (raceSet == 'a') {
-        blackLabels.push('African Americans');
-        whiteLabels.push('European Americans');
+        blackLabels.push('Afroamericani');
+        whiteLabels.push('Europei');
     } else {
-        blackLabels.push('Black people');
-        whiteLabels.push('White people');
+        blackLabels.push('Persone nere');
+        whiteLabels.push('Persone bianche');
     }
 
     API.addGlobal({
@@ -37,14 +37,14 @@ define(['managerAPI',
         //Select randomly what attribute words to see. 
         //Based on Axt, Feng, & Bar-Anan (2021).
         posWords : API.shuffle([
-            'Love', 'Cheer', 'Friend', 'Pleasure',
-            'Adore', 'Cheerful', 'Friendship', 'Joyful', 
-            'Smiling','Cherish', 'Excellent', 'Glad', 
-            'Joyous', 'Spectacular', 'Appealing', 'Delight', 
-            'Excitement', 'Laughing', 'Attractive','Delightful', 
-            'Fabulous', 'Glorious', 'Pleasing', 'Beautiful', 
-            'Fantastic', 'Happy', 'Lovely', 'Terrific', 
-            'Celebrate', 'Enjoy', 'Magnificent', 'Triumph'
+            'Amore', 'Allegria', 'Amico', 'Piacere',
+            'Adorare', 'Allegro', 'Amicizia', 'Gioioso', 
+            'Sorridente','Apprezzare', 'Eccellente', 'Felice', 
+            'Gioioso', 'Spettacolare', 'Attraente', 'Delizia', 
+            'Eccitazione', 'Ridere', 'Attraente','Delizioso', 
+            'Favoloso', 'Glorioso', 'Piacevole', 'Bello', 
+            'Fantastico', 'Felice', 'Amorevole', 'Eccezionale', 
+            'Celebrare', 'Divertirsi', 'Magnifico', 'Trionfo'
         ]), 
         negWords : API.shuffle([
             'Abuse', 'Grief', 'Poison', 'Sadness', 
