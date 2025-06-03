@@ -174,32 +174,20 @@ define(['managerAPI',
             // First run (fresh round)
             { inherit: 'intro' },
             {
-                mixer: 'random',
+                mixer: 'wrapper',
                 data: [
-                    { inherit: 'explicits' },
-                    {
-                        mixer: 'wrapper',
-                        data: [
-                            { inherit: 'raceiat_instructions' },
-                            { inherit: 'raceiat' }
-                        ]
-                    }
+                    { inherit: 'raceiat_instructions' },
+                    { inherit: 'raceiat' }
                 ]
             },
 
             // Second run (fresh round)
             { inherit: 'intro_2' },
             {
-                mixer: 'random',
+                mixer: 'wrapper',
                 data: [
-                    { inherit: 'explicits' },
-                    {
-                        mixer: 'wrapper',
-                        data: [
-                            { inherit: 'raceiat_instructions' },
-                            { inherit: 'raceiat' }
-                        ]
-                    }
+                    { inherit: 'raceiat_instructions' },
+                    { inherit: 'raceiat' }
                 ]
             },
 
