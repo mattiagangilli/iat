@@ -153,23 +153,37 @@ define(['managerAPI',
             ]
         },
         
-        
-        {inherit: 'intro'},
-        {
-            mixer:'random',
-            data:[
-                {inherit: 'explicits'},
+        // First run (fresh round)
+            { inherit: 'intro' },
+            {
+                mixer: 'random',
+                data: [
+                    { inherit: 'explicits' },
+                    {
+                        mixer: 'wrapper',
+                        data: [
+                            { inherit: 'raceiat_instructions' },
+                            { inherit: 'raceiat' }
+                        ]
+                    }
+                ]
+            },
 
-                // force the instructions to preceed the iat
-                {
-                    mixer: 'wrapper',
-                    data: [
-                        {inherit: 'raceiat_instructions'},
-                        {inherit: 'raceiat'}
-                    ]
-                }
-            ]
-        },
+// Second run (fresh round)
+            { inherit: 'intro' },
+            {
+                mixer: 'random',
+                data: [
+                    { inherit: 'explicits' },
+                    {
+                        mixer: 'wrapper',
+                        data: [
+                            { inherit: 'raceiat_instructions' },
+                            { inherit: 'raceiat' }
+                        ]
+                    }
+                ]
+            },
 
 		{inherit: 'uploading'},
         {inherit: 'lastpage'},
