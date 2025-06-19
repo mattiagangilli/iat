@@ -8,7 +8,7 @@ define(['managerAPI',
         //const pt = urlParams.get('pt');
 
         var API = new Manager();
-        //const subid = Date.now().toString(16)+Math.floor(Math.random()*10000).toString(16);
+        const subid = Date.now().toString(16)+Math.floor(Math.random()*10000).toString(16);
         init_data_pipe(API, 'Vra6BAwiEA0Z', { file_type: 'csv' });
 
         API.setName('mgr');
