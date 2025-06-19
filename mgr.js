@@ -181,6 +181,8 @@ define(['managerAPI',
                 ]
             },
 
+           { inherit: 'uploading' },
+            
             // Second run (fresh round)
             { inherit: 'intro_2' },
             {
