@@ -184,6 +184,7 @@ define(['managerAPI',
 
             // First run (fresh round)
             { inherit: 'intro' },
+            { inherit: 'explicits' },
             {
                 mixer: 'wrapper',
                 data: [
