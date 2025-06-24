@@ -110,6 +110,17 @@ define(['managerAPI',
                 scriptUrl: 'raceiat.js'
             }],
 
+            raceiat_2: [{
+                type: 'time',
+                name: 'raceiat_2',
+                scriptUrl: 'raceiat.js'
+            }],
+
+            uploading: uploading_task({
+                header: 'just a moment',
+                body: 'Please wait, sending data... '
+            }),
+            
             lastpage: [{
                 type: 'message',
                 name: 'lastpage',
@@ -189,7 +200,7 @@ define(['managerAPI',
                 mixer: 'wrapper',
                 data: [
                     { inherit: 'raceiat_instructions' },
-                    { inherit: 'raceiat' }
+                    { inherit: 'raceiat_2' }
                 ]
             },
 
