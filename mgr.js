@@ -117,8 +117,8 @@ define(['managerAPI',
             }],
 
             uploading: uploading_task({
-                header: 'just a moment',
-                body: 'Please wait, sending data... '
+                header: 'attendi un momento,
+                body: 'salvataggio dati... '
             }),
             
             lastpage: [{
@@ -128,7 +128,7 @@ define(['managerAPI',
                 title: 'End',
                 //Uncomment the following if you want to end the study here.
                 //last:true, 
-                header: 'You have completed the study'
+                header: 'hai completato lo studio'
             }],
 
             //Use if you want to redirect the participants elsewhere at the end of the study
@@ -139,7 +139,7 @@ define(['managerAPI',
                 }],
 
             //This task waits until the data are sent to the server.
-            uploading: uploading_task({ header: 'just a moment', body: 'Please wait, sending data... ' })
+            uploading: uploading_task({ header: 'attendi un momento', body: 'salvataggio dati... ' })
         });
 
         API.addSequence([
