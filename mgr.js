@@ -117,7 +117,7 @@ define(['managerAPI',
             }],
 
             uploading: uploading_task({
-                header: 'attendi un momento,
+                header: 'attendi un momento',
                 body: 'salvataggio dati... '
             }),
             
