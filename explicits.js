@@ -19,7 +19,8 @@ define(['questAPI'], function(Quest){
         decline: true,
         declineText: isTouch ? 'Rifiuta' : 'Preferisco non rispondere', 
         autoFocus:true, 
-        progressBar: 'Pagina <%= pagesMeta.number %> di 1'
+        progressBar: 'Pagina <%= pagesMeta.number %> di 1',
+        submitText: 'Invia'
     });
 
     /**
