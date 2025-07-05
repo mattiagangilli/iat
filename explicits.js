@@ -2,14 +2,6 @@ define(['questAPI'], function(Quest){
     let API = new Quest();
     let isTouch = API.getGlobal().$isTouch;
 
-    // Etichette globali tradotte
-    API.addGlobal({
-        labels: {
-            submit: 'Invia',
-            decline: èTouch ? 'Rifiuta' : 'Preferisco non rispondere'
-        }
-    });
-    
     /**
      * Page prototype
      */
