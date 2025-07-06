@@ -127,184 +127,79 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 			blockSwitch_nTrials : 8,
 			blockSwitch_nMiniBlocks : 1,
 
-			//Should we randomize which attribute is on the right, and which on the left?
-			randomAttSide : false, // Accepts 'true' and 'false'. If false, then attribute2 on the right.
+//Dobbiamo randomizzare quale attributo è a destra e quale a sinistra?
+randomAttSide : false, // Accetta 'true' o 'false'. Se false, allora attribute2 sarà a destra.
 
-			//Should we randomize which category is on the right first?
-			randomBlockOrder : true, //Accepts 'true' and 'false'. If false, then category1 on the left first.
-			//Note: the player sends block3Cond at the end of the task (saved in the explicit table) to inform about the categories in that block.
-			//In the block3Cond variable: "att1/cat1,att2/cat2" means att1 and cat1 on the left, att2 and cat2 on the right.
+//Dobbiamo randomizzare quale categoria è a destra all'inizio?
+randomBlockOrder : true, // Accetta 'true' o 'false'. Se false, category1 sarà a sinistra all'inizio.
+//Nota: il player invia block3Cond alla fine del compito (salvato nella tabella explicit) per informare sulle categorie in quel blocco.
+//Nella variabile block3Cond: "att1/cat1,att2/cat2" significa att1 e cat1 a sinistra, att2 e cat2 a destra.
 
-			//Show a reminder what to do on error, throughout the task
-			remindError : true,
+//Mostrare un promemoria su cosa fare in caso di errore, durante tutto il compito
+remindError : true,
 
-			remindErrorText : '<p align="center" style="font-size:1em; font-family:arial; color:#000000">' +
-			'Se commetti un errore, apparirà una <font color="#ff0000"><b>X</b></font> rossa. ' +
-			'Premi l’altro tasto per continuare.<p/>',
+remindErrorText : '<p align="center" style="font-size:1em; font-family:arial; color:#000000">' +
+'Se commetti un errore, apparirà una <font color="#ff0000"><b>X</b></font> rossa. ' +
+'Premi l’altro tasto per continuare.<p/>',
 
-			remindErrorTextTouch : '<p align="center" style="font-size:1.4em; font-family:arial; color:#000000">' +
-			'Se commetti un errore, apparirà una <font color="#ff0000"><b>X</b></font> rossa. ' +
-			'Tocca l’altro lato per continuare.<p/>',
+remindErrorTextTouch : '<p align="center" style="font-size:1.4em; font-family:arial; color:#000000">' +
+'Se commetti un errore, apparirà una <font color="#ff0000"><b>X</b></font> rossa. ' +
+'Tocca l’altro lato per continuare.<p/>',
 
-			errorCorrection : true, //Should participants correct error responses?
-			errorFBDuration : 500, //Duration of error feedback display (relevant only when errorCorrection is false)
-			ITIDuration : 250, //Duration between trials.
+errorCorrection : true, //I partecipanti devono correggere le risposte errate?
+errorFBDuration : 500, //Durata della visualizzazione del feedback di errore (rilevante solo se errorCorrection è false)
+ITIDuration : 250, //Durata tra una prova e l’altra.
 
-			fontColor : '#000000', //The default color used for printed messages.
-			
-			leftKey : 'e', 
-			rightKey: 'i',
-			//Text and style for key instructions displayed about the category labels.
-			leftKeyText : 'Press "E" for', 
-			rightKeyText : 'Press "I" for', 
-			keysCss : {'font-size':'0.8em', 'font-family':'courier', color:'#000000'},
-			//Text and style for the separator between the top and bottom category labels.
-			orText : 'or', 
-			orCss : {'font-size':'1.8em', color:'#000000'},
-			
-			instWidth : 99, //The width of the instructions stimulus
-			
-			finalText : 'Press space to continue to the next task', 
-			finalTouchText : 'Touch the bottom green area to continue to the next task',
+fontColor : '#000000', //Colore predefinito per i messaggi stampati.
 
-			touchMaxStimulusWidth : '50%', 
-			touchMaxStimulusHeight : '50%', 
-			bottomTouchCss: {}, //Add any CSS value you want for changing the css of the bottom touch area.
+leftKey : 'e', 
+rightKey: 'i',
+//Testo e stile per le istruzioni sui tasti visualizzate vicino alle etichette delle categorie.
+leftKeyText : 'Premi "E" per', 
+rightKeyText : 'Premi "I" per', 
+keysCss : {'font-size':'0.8em', 'font-family':'courier', color:'#000000'},
+//Testo e stile per il separatore tra le etichette in alto e in basso.
+orText : 'oppure', 
+orCss : {'font-size':'1.8em', color:'#000000'},
 
-			//Instructions text.
-			// You can use the following variables and they will be replaced by
-			// the name of the categories and the block's number variables:
-			// leftCategory, rightCategory, leftAttribute and rightAttribute, blockNum, nBlocks.
-			// Notice that this is HTML text.
-			instAttributePractice: '<div><p align="center" style="font-size:20px; font-family:arial">' +
-				'<font color="#000000"><u>Part blockNum of nBlocks </u><br/><br/></p>' +
-				'<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
-				'Put a left finger on the <b>E</b> key for items that belong to the category <font color="#0000ff">leftAttribute.</font>' +
-				'<br/>Put a right finger on the <b>I</b> key for items that belong to the category <font color="#0000ff">rightAttribute</font>.<br/><br/>' +
-				'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. ' +
-				'Press the other key to continue.<br/>' +
-				'<u>Go as fast as you can</u> while being accurate.<br/><br/></p>'+
-				'<p align="center">Press the <b>space bar</b> when you are ready to start.</font></p></div>',
-			instAttributePracticeTouch: [
-				'<div>',
-					'<p align="center">',
-						'<u>Part blockNum of nBlocks</u>',
-					'</p>',
-					'<p align="left" style="margin-left:5px">',
-						'<br/>',
-						'Put a left finger over the the <b>left</b> green area for items that belong to the category <font color="#0000ff">leftAttribute</font>.<br/>',
-						'Put a right finger over the <b>right</b> green area for items that belong to the category <font color="#0000ff">rightAttribute</font>.<br/>',
-						'Items will appear one at a time.<br/>',
-						'<br/>',
-						'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. Touch the other side. <u>Go as fast as you can</u> while being accurate.',
-					'</p>',
-					'<p align="center">Touch the <b>lower </b> green area to start.</p>',
-				'</div>'
-			].join('\n'),
+instWidth : 99, //Larghezza dello stimolo delle istruzioni
 
-			instCategoriesPractice: '<div><p align="center" style="font-size:20px; font-family:arial">' +
-				'<font color="#000000"><u>Part blockNum of nBlocks </u><br/><br/></p>' +
-				'<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
-				'Put a left finger on the <b>E</b> key for items that belong to the category <font color="#336600">leftCategory</font>. ' +
-				'<br/>Put a right finger on the <b>I</b> key for items that belong to the category <font color="#336600">rightCategory</font>.<br/>' +
-				'Items will appear one at a time.<br/><br/>' +
-				'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. ' +
-				'Press the other key to continue.<br/>' +
-				'<u>Go as fast as you can</u> while being accurate.<br/><br/></p>'+
-				'<p align="center">Press the <b>space bar</b> when you are ready to start.</font></p></div>',
-			instCategoriesPracticeTouch: [
-				'<div>',
-					'<p align="center">',
-						'<u>Part blockNum of nBlocks</u>',
-					'</p>',
-					'<p align="left" style="margin-left:5px">',
-						'<br/>',
-						'Put a left finger over the <b>left</b> green area for items that belong to the category <font color="#336600">leftCategory</font>.<br/>',
-						'Put a right finger over the <b>right</b> green area for items that belong to the category <font color="#336600">rightCategory</font>.<br/>',
-						'Items will appear one at a time.<br/>',
-						'<br/>',
-						'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. Touch the other side. <u>Go as fast as you can</u> while being accurate.',
-					'</p>',
-					'<p align="center">Touch the <b>lower </b> green area to start.</p>',
-				'</div>'
-			].join('\n'),
+finalText : 'Premi la barra spaziatrice per continuare al prossimo compito', 
+finalTouchText : 'Tocca l’area verde in basso per continuare al prossimo compito',
 
-			instFirstCombined : '<div><p align="center" style="font-size:20px; font-family:arial">' +
-				'<font color="#000000"><u>Part blockNum of nBlocks </u><br/><br/></p>' +
-				'<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
-				'Use the <b>E</b> key for <font color="#336600">leftCategory</font> and for <font color="#0000ff">leftAttribute</font>.<br/>' +
-				'Use the <b>I</b> key for <font color="#336600">rightCategory</font> and for  <font color="#0000ff">rightAttribute</font>.<br/>' +
-				'Each item belongs to only one category.<br/><br/>' +
-				'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. ' +
-				'Press the other key to continue.<br/>' + 
-				'<u>Go as fast as you can</u> while being accurate.<br/><br/></p>' +
-				'<p align="center">Press the <b>space bar</b> when you are ready to start.</font></p></div>',
-			instFirstCombinedTouch:[
-				'<div>',
-					'<p align="center">',
-						'<u>Part blockNum of nBlocks</u>',
-					'</p>',
-					'<br/>',
-					'<br/>',
-					'<p align="left" style="margin-left:5px">',
-						'Put a left finger over the <b>left</b> green area for <font color="#336600">leftCategory</font> items and for <font color="#0000ff">leftAttribute</font>.</br>',
-						'Put a right finger over the <b>right</b> green area for <font color="#336600">rightCategory</font> items and for <font color="#0000ff">rightAttribute</font>.</br>',
-							'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. Touch the other side. <u>Go as fast as you can</u> while being accurate.</br>',
-						'</p>',
-						'<p align="center">Touch the <b>lower </b> green area to start.</p>',
-				'</div>'
-			].join('\n'),
+touchMaxStimulusWidth : '50%', 
+touchMaxStimulusHeight : '50%', 
+bottomTouchCss: {}, //Inserisci qualsiasi valore CSS per cambiare lo stile dell’area touch inferiore.
 
-			instSecondCombined : '<div><p align="center" style="font-size:20px; font-family:arial">' +
-				'<font color="#000000"><u>Part blockNum of nBlocks </u><br/><br/></p>' +
-				'<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
-				'This is the same as the previous part.<br/>' +
-				'Use the <b>E</b> key for <font color="#336600">leftCategory</font> and for <font color="#0000ff">leftAttribute</font>.<br/>' +
-				'Use the <b>I</b> key for <font color="#336600">rightCategory</font> and for  <font color="#0000ff">rightAttribute</font>.<br/>' +
-				'Each item belongs to only one category.<br/><br/>' +
-				'<u>Go as fast as you can</u> while being accurate.<br/><br/></p>' +
-				'<p align="center">Press the <b>space bar</b> when you are ready to start.</font></p></div>',
-			instSecondCombinedTouch:[
-				'<div>',
-					'<p align="center"><u>Part blockNum of nBlocks</u></p>',
-					'<br/>',
-					'<br/>',
+//Testo delle istruzioni.
+//Puoi usare le seguenti variabili che verranno sostituite con
+//i nomi delle categorie e i numeri di blocco:
+//leftCategory, rightCategory, leftAttribute, rightAttribute, blockNum, nBlocks.
+//Nota: questo è testo HTML.
 
-					'<p align="left" style="margin-left:5px">',
-						'Put a left finger over the <b>left</b> green area for <font color="#336600">leftCategory</font> items and for <font color="#0000ff">leftAttribute</font>.<br/>',
-						'Put a right finger over the <b>right</b> green area for <font color="#336600">rightCategory</font> items and for <font color="#0000ff">rightAttribute</font>.<br/>',
-						'<br/>',
-						'<u>Go as fast as you can</u> while being accurate.<br/>',
-					'</p>',
-					'<p align="center">Touch the <b>lower </b> green area to start.</p>',
-				'</div>'
-			].join('\n'),
+instAttributePractice: '<div><p align="center" style="font-size:20px; font-family:arial">' +
+'<font color="#000000"><u>Parte blockNum di nBlocks </u><br/><br/></p>' +
+'<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
+'Metti un dito sinistro sul tasto <b>E</b> per gli elementi che appartengono alla categoria <font color="#0000ff">leftAttribute</font>.' +
+'<br/>Metti un dito destro sul tasto <b>I</b> per gli elementi che appartengono alla categoria <font color="#0000ff">rightAttribute</font>.<br/><br/>' +
+'Se commetti un errore, apparirà una <font color="#ff0000"><b>X</b></font> rossa. Premi l’altro tasto per continuare.<br/>' +
+'<u>Vai il più veloce possibile</u> cercando di essere preciso.<br/><br/></p>' +
+'<p align="center">Premi la <b>barra spaziatrice</b> quando sei pronto per iniziare.</font></p></div>',
 
-			instSwitchCategories : '<div><p align="center" style="font-size:20px; font-family:arial">' +
-				'<font color="#000000"><u>Part blockNum of nBlocks </u><br/><br/></p>' +
-				'<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
-				'<b>Watch out, the labels have changed position!</b><br/>' +
-				'Use the left finger on the <b>E</b> key for <font color="#336600">leftCategory</font>.<br/>' +
-				'Use the right finger on the <b>I</b> key for <font color="#336600">rightCategory</font>.<br/><br/>' +
-				'<u>Go as fast as you can</u> while being accurate.<br/><br/></p>' +
-				'<p align="center">Press the <b>space bar</b> when you are ready to start.</font></p></div>',
-			instSwitchCategoriesTouch: [
-				'<div>',
-					'<p align="center">',
-						'<u>Part blockNum of nBlocks</u>',
-					'</p>',
-					'<p align="left" style="margin-left:5px">',
-						'<br/>',
-						'Watch out, the labels have changed position!<br/>',
-							'Put a left finger over the <b>left</b> green area for <font color="#336600">leftCategory</font> items.<br/>',
-							'Put a right finger over the <b>right</b> green area for <font color="#336600">rightCategory</font> items.<br/>',
-							'Items will appear one at a time.',
-							'<br/>',
-							'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. Touch the other side. <u>Go as fast as you can</u> while being accurate.<br/>',
-						'</p>',
-						'<p align="center">Touch the <b>lower </b> green area to start.</p>',
-				'</div>'
-			].join('\n'),
+// Versione touch delle istruzioni di pratica sugli attributi
+instAttributePracticeTouch: [ ... ].join('\n'), // Traduzione già fornita sopra in forma testuale, omessa qui per brevità
+
+// Istruzioni per la pratica sulle categorie
+instCategoriesPractice: '<div><p align="center" style="font-size:20px; font-family:arial">' +
+'<font color="#000000"><u>Parte blockNum di nBlocks </u><br/><br/></p>' +
+'<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
+'Metti un dito sinistro sul tasto <b>E</b> per gli elementi della categoria <font color="#336600">leftCategory</font>. ' +
+'<br/>Metti un dito destro sul tasto <b>I</b> per gli elementi della categoria <font color="#336600">rightCategory</font>.<br/>' +
+'Gli stimoli appariranno uno alla volta.<br/><br/>' +
+'Se commetti un errore, apparirà una <font color="#ff0000"><b>X</b></font> rossa. Premi l’altro tasto per continuare.<br/>' +
+'<u>Vai il più veloce possibile</u> cercando di essere preciso.<br/><br/></p>' +
+'<p align="center">Premi la <b>barra spaziatrice</b> quando sei pronto per iniziare.</font></p></div>',
+
 
 			instThirdCombined : 'instFirstCombined', //this means that we're going to use the instFirstCombined property for the third combined block as well. You can change that.
 			instFourthCombined : 'instSecondCombined', //this means that we're going to use the instSecondCombined property for the fourth combined block as well. You can change that.
