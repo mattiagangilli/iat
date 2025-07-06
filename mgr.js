@@ -31,6 +31,7 @@ define(['managerAPI',
             raceiat: {},
             //YBYB: change when copying back to the correct folder
             baseURL: './images/',
+            baseURLTrial: './images/trial/',
             raceSet: raceSet,
             blackLabels: blackLabels,
             whiteLabels: whiteLabels,
@@ -89,6 +90,14 @@ define(['managerAPI',
                 header: 'Implicit Association Test'
             }],
 
+            raceiat_instructions_trial: [{
+                inherit: 'instructions',
+                name: 'raceiat_instructions_trial',
+                templateUrl: 'raceiat_instructions_trial.jst',
+                title: 'IAT Instructions (Trial)',
+                header: 'Implicit Association Test'
+            }],
+
             //This task is used to show the explicits questions.
             raceiat_instructions_validating: [{
                 inherit: 'instructions',
@@ -102,6 +111,12 @@ define(['managerAPI',
                 type: 'quest',
                 name: 'explicits',
                 scriptUrl: 'explicits.js'
+            }],
+
+            raceiat_trial: [{
+                type: 'time',
+                name: 'raceiat_trial',
+                scriptUrl: 'raceiat_trial.js'
             }],
 
             raceiat: [{
@@ -185,6 +200,17 @@ define(['managerAPI',
             // First run (fresh round)
             { inherit: 'intro' },
             { inherit: 'explicits' },
+
+            // Trial
+            {
+                mixer: 'wrapper',
+                data: [
+                    { inherit: 'raceiat_instructions_trial' },
+                    { inherit: 'raceiat_trial' }
+                ]
+            },
+
+            // First run (fresh round)
             {
                 mixer: 'wrapper',
                 data: [

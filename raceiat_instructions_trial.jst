@@ -1,0 +1,63 @@
+<%
+    var respInst = "Successivamente, per eseguire il compito, dovrai utilizzare i tasti 'E' e 'I' della tastiera del tuo computer.";
+    if (global.$isTouch)  respInst = "Successivamente,";
+%>
+
+<div class="panel panel-info" style="margin-top:1em">
+		<div class="panel-heading">
+			<h1 class="panel-title" style="font-size:2em">
+				Istruzioni IAT (Di Prova)
+			</h1>
+		</div>
+</div>
+
+<div class="panel-body">
+	<p class="lead"><%=respInst%> Classifica gli elementi nei gruppi il più velocemente possibile. 
+	Questi sono i quattro gruppi e gli elementi che appartengono ad ognuno di essi:</p>
+
+	<table class="table table-bordered">
+		<tr class="active">
+			<th>Categorie</th>
+			<th>Elementi</th>
+		</tr>
+		<tr>
+			<th>Positive</th>
+			<td><%=global.posWords[0]%>, <%=global.posWords[1]%>, <%=global.posWords[2]%>, 
+			<%=global.posWords[3]%></td>
+		</tr>
+		<tr>
+			<th>Negative</th>
+			<td><%=global.negWords[0]%>, <%=global.negWords[1]%>, <%=global.negWords[2]%>, 
+			<%=global.negWords[3]%></td>
+		</tr>
+		<tr>
+			<th>Insetti</th>
+	<td>
+		  <img src="<%=global.baseURLTrial%>trial_bf1.jpg" height=60>
+		  <img src="<%=global.baseURLTrial%>trial_bf2.jpg" height=60>
+		  <img src="<%=global.baseURLTrial%>trial_bm1.jpg" height=60>
+		  <img src="<%=global.baseURLTrial%>trial_bm2.jpg" height=60>
+
+	   
+			  </td>
+		</tr>
+		<tr>
+			<th>Fiori</th>
+			<td>    
+			  <img src="<%=global.baseURLTrial%>trial_wf1.jpg" height=60>
+			  <img src="<%=global.baseURLTrial%>trial_wf2.jpg" height=60>
+			  <img src="<%=global.baseURLTrial%>trial_wm1.jpg" height=60>
+			  <img src="<%=global.baseURLTrial%>trial_wm2.jpg" height=60>
+			  </td>
+		</tr>
+	</table>
+
+	<p class="lead">Ci sono 7 parti.  Le istruzioni cambiano per ogni parte.  Fai attenzione!<p>
+
+	<div class="text-center proceed" style="margin: 30px auto 10px;">
+		<button pi-message-done type="button" class="btn btn-primary">
+			Inizia
+		</button>
+	</div>
+</div>
+
