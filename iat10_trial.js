@@ -139,12 +139,12 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 			remindError : true,
 
 			remindErrorText : '<p align="center" style="font-size:1em; font-family:arial; color:#000000">' +
-			'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. ' +
-			'Press the other key to continue.<p/>',
+			'Se commetti un errore, apparirà una <font color="#ff0000"><b>X</b></font> rossa. ' +
+			'Premi l’altro tasto per continuare.<p/>',
 
 			remindErrorTextTouch : '<p align="center" style="font-size:1.4em; font-family:arial; color:#000000">' +
-			'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. ' +
-			'Touch the other side to continue.<p/>',
+			'Se commetti un errore, apparirà una <font color="#ff0000"><b>X</b></font> rossa. ' +
+			'Tocca l’altro lato per continuare.<p/>',
 
 			errorCorrection : true, //Should participants correct error responses?
 			errorFBDuration : 500, //Duration of error feedback display (relevant only when errorCorrection is false)
