@@ -203,55 +203,57 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 			].join('\n'),
 
 			instCategoriesPractice: '<div><p align="center" style="font-size:20px; font-family:arial">' +
-				'<font color="#000000"><u>Part blockNum of nBlocks </u><br/><br/></p>' +
-				'<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
-				'Put a left finger on the <b>E</b> key for items that belong to the category <font color="#336600">leftCategory</font>. ' +
-				'<br/>Put a right finger on the <b>I</b> key for items that belong to the category <font color="#336600">rightCategory</font>.<br/>' +
-				'Items will appear one at a time.<br/><br/>' +
-				'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. ' +
-				'Press the other key to continue.<br/>' +
-				'<u>Go as fast as you can</u> while being accurate.<br/><br/></p>'+
-				'<p align="center">Press the <b>space bar</b> when you are ready to start.</font></p></div>',
+			    '<font color="#000000"><u>Parte blockNum di nBlocks </u><br/><br/></p>' +
+			    '<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
+			    'Metti un dito sinistro sul tasto <b>E</b> per gli elementi che appartengono alla categoria <font color="#336600">leftCategory</font>. ' +
+			    '<br/>Metti un dito destro sul tasto <b>I</b> per gli elementi che appartengono alla categoria <font color="#336600">rightCategory</font>.<br/>' +
+			    'Gli elementi appariranno uno alla volta.<br/><br/>' +
+			    'Se fai un errore, apparirà una <font color="#ff0000"><b>X</b></font> rossa. ' +
+			    'Premi l’altro tasto per continuare.<br/>' +
+			    '<u>Procedi il più velocemente possibile</u> mantenendo la precisione.<br/><br/></p>' +
+			    '<p align="center">Premi la <b>barra spaziatrice</b> quando sei pronto per iniziare.</font></p></div>',
+			
 			instCategoriesPracticeTouch: [
-				'<div>',
-					'<p align="center">',
-						'<u>Part blockNum of nBlocks</u>',
-					'</p>',
-					'<p align="left" style="margin-left:5px">',
-						'<br/>',
-						'Put a left finger over the <b>left</b> green area for items that belong to the category <font color="#336600">leftCategory</font>.<br/>',
-						'Put a right finger over the <b>right</b> green area for items that belong to the category <font color="#336600">rightCategory</font>.<br/>',
-						'Items will appear one at a time.<br/>',
-						'<br/>',
-						'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. Touch the other side. <u>Go as fast as you can</u> while being accurate.',
-					'</p>',
-					'<p align="center">Touch the <b>lower </b> green area to start.</p>',
-				'</div>'
+			    '<div>',
+			        '<p align="center">',
+			            '<u>Parte blockNum di nBlocks</u>',
+			        '</p>',
+			        '<p align="left" style="margin-left:5px">',
+			            '<br/>',
+			            'Metti un dito sinistro sopra l’area verde <b>sinistra</b> per gli elementi che appartengono alla categoria <font color="#336600">leftCategory</font>.<br/>',
+			            'Metti un dito destro sopra l’area verde <b>destra</b> per gli elementi che appartengono alla categoria <font color="#336600">rightCategory</font>.<br/>',
+			            'Gli elementi appariranno uno alla volta.<br/>',
+			            '<br/>',
+			            'Se fai un errore, apparirà una <font color="#ff0000"><b>X</b></font> rossa. Tocca l’altro lato. <u>Procedi il più velocemente possibile</u> mantenendo la precisione.',
+			        '</p>',
+			        '<p align="center">Tocca l’area verde <b>inferiore</b> per iniziare.</p>',
+			    '</div>'
 			].join('\n'),
-
+			
 			instFirstCombined : '<div><p align="center" style="font-size:20px; font-family:arial">' +
-				'<font color="#000000"><u>Part blockNum of nBlocks </u><br/><br/></p>' +
+				'<font color="#000000"><u>Parte blockNum di nBlocks </u><br/><br/></p>' +
 				'<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
-				'Use the <b>E</b> key for <font color="#336600">leftCategory</font> and for <font color="#0000ff">leftAttribute</font>.<br/>' +
-				'Use the <b>I</b> key for <font color="#336600">rightCategory</font> and for  <font color="#0000ff">rightAttribute</font>.<br/>' +
-				'Each item belongs to only one category.<br/><br/>' +
-				'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. ' +
-				'Press the other key to continue.<br/>' + 
-				'<u>Go as fast as you can</u> while being accurate.<br/><br/></p>' +
-				'<p align="center">Press the <b>space bar</b> when you are ready to start.</font></p></div>',
+				'Usa il tasto <b>E</b> per <font color="#336600">leftCategory</font> e per <font color="#0000ff">leftAttribute</font>.<br/>' +
+				'Usa il tasto <b>I</b> per <font color="#336600">rightCategory</font> e per <font color="#0000ff">rightAttribute</font>.<br/>' +
+				'Ogni elemento appartiene a una sola categoria.<br/><br/>' +
+				'Se fai un errore, apparirà una <font color="#ff0000"><b>X</b></font> rossa. ' +
+				'Premi l’altro tasto per continuare.<br/>' +
+				'<u>Procedi il più velocemente possibile</u> mantenendo la precisione.<br/><br/></p>' +
+				'<p align="center">Premi la <b>barra spaziatrice</b> quando sei pronto per iniziare.</font></p></div>',
+			
 			instFirstCombinedTouch:[
 				'<div>',
 					'<p align="center">',
-						'<u>Part blockNum of nBlocks</u>',
+						'<u>Parte blockNum di nBlocks</u>',
 					'</p>',
 					'<br/>',
 					'<br/>',
 					'<p align="left" style="margin-left:5px">',
-						'Put a left finger over the <b>left</b> green area for <font color="#336600">leftCategory</font> items and for <font color="#0000ff">leftAttribute</font>.</br>',
-						'Put a right finger over the <b>right</b> green area for <font color="#336600">rightCategory</font> items and for <font color="#0000ff">rightAttribute</font>.</br>',
-							'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. Touch the other side. <u>Go as fast as you can</u> while being accurate.</br>',
-						'</p>',
-						'<p align="center">Touch the <b>lower </b> green area to start.</p>',
+						'Metti un dito sinistro sull’area verde <b>sinistra</b> per gli elementi di <font color="#336600">leftCategory</font> e <font color="#0000ff">leftAttribute</font>.<br/>',
+						'Metti un dito destro sull’area verde <b>destra</b> per gli elementi di <font color="#336600">rightCategory</font> e <font color="#0000ff">rightAttribute</font>.<br/>',
+						'Se fai un errore, apparirà una <font color="#ff0000"><b>X</b></font> rossa. Tocca l’altro lato. <u>Procedi il più velocemente possibile</u> mantenendo la precisione.<br/>',
+					'</p>',
+					'<p align="center">Tocca l’area verde <b>inferiore</b> per iniziare.</p>',
 				'</div>'
 			].join('\n'),
 
