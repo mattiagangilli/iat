@@ -281,33 +281,34 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 			    '</div>'
 			].join('\n'),
 
-
 			instSwitchCategories : '<div><p align="center" style="font-size:20px; font-family:arial">' +
-				'<font color="#000000"><u>Part blockNum of nBlocks </u><br/><br/></p>' +
-				'<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
-				'<b>Watch out, the labels have changed position!</b><br/>' +
-				'Use the left finger on the <b>E</b> key for <font color="#336600">leftCategory</font>.<br/>' +
-				'Use the right finger on the <b>I</b> key for <font color="#336600">rightCategory</font>.<br/><br/>' +
-				'<u>Go as fast as you can</u> while being accurate.<br/><br/></p>' +
-				'<p align="center">Press the <b>space bar</b> when you are ready to start.</font></p></div>',
+			    '<font color="#000000"><u>Parte blockNum di nBlocks </u><br/><br/></p>' +
+			    '<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
+			    '<b>Attenzione, le etichette hanno cambiato posizione!</b><br/>' +
+			    'Usa il dito sinistro sul tasto <b>E</b> per <font color="#336600">leftCategory</font>.<br/>' +
+			    'Usa il dito destro sul tasto <b>I</b> per <font color="#336600">rightCategory</font>.<br/><br/>' +
+			    '<u>Procedi il più velocemente possibile</u> mantenendo la precisione.<br/><br/></p>' +
+			    '<p align="center">Premi la <b>barra spaziatrice</b> quando sei pronto per iniziare.</font></p></div>',
+			
 			instSwitchCategoriesTouch: [
-				'<div>',
-					'<p align="center">',
-						'<u>Part blockNum of nBlocks</u>',
-					'</p>',
-					'<p align="left" style="margin-left:5px">',
-						'<br/>',
-						'Watch out, the labels have changed position!<br/>',
-							'Put a left finger over the <b>left</b> green area for <font color="#336600">leftCategory</font> items.<br/>',
-							'Put a right finger over the <b>right</b> green area for <font color="#336600">rightCategory</font> items.<br/>',
-							'Items will appear one at a time.',
-							'<br/>',
-							'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. Touch the other side. <u>Go as fast as you can</u> while being accurate.<br/>',
-						'</p>',
-						'<p align="center">Touch the <b>lower </b> green area to start.</p>',
-				'</div>'
+			    '<div>',
+			        '<p align="center">',
+			            '<u>Parte blockNum di nBlocks</u>',
+			        '</p>',
+			        '<p align="left" style="margin-left:5px">',
+			            '<br/>',
+			            'Attenzione, le etichette hanno cambiato posizione!<br/>',
+			            'Metti un dito sinistro sopra l’area verde <b>sinistra</b> per gli elementi di <font color="#336600">leftCategory</font>.<br/>',
+			            'Metti un dito destro sopra l’area verde <b>destra</b> per gli elementi di <font color="#336600">rightCategory</font>.<br/>',
+			            'Gli elementi appariranno uno alla volta.',
+			            '<br/>',
+			            'Se fai un errore, apparirà una <font color="#ff0000"><b>X</b></font> rossa. Tocca l’altro lato. <u>Procedi il più velocemente possibile</u> mantenendo la precisione.<br/>',
+			        '</p>',
+			        '<p align="center">Tocca l’area verde <b>inferiore</b> per iniziare.</p>',
+			    '</div>'
 			].join('\n'),
 
+			
 			instThirdCombined : 'instFirstCombined', //this means that we're going to use the instFirstCombined property for the third combined block as well. You can change that.
 			instFourthCombined : 'instSecondCombined', //this means that we're going to use the instSecondCombined property for the fourth combined block as well. You can change that.
 			instThirdCombinedTouch : 'instFirstCombined', //this means that we're going to use the instFirstCombined property for the third combined block as well. You can change that.
