@@ -184,7 +184,7 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 				'Se commetti un errore, una <font color="#ff0000"><b>X</b></font> rossa apparirà sullo schermo. ' +
 				'Premi il tasto corretto per continuare.<br/>' +
 				'<u>Esegui il test il più velocemente possibile</u> cercando di non commettere errori.<br/><br/></p>'+
-				'<p align="center">Premi la <b>barra spaziatrice</b> quando sei pronto per partire con il test.</font></p></div>',
+				'<p align="center">Premi la <b>barra spaziatrice</b> quando sei pronto.</font></p></div>',
 			instAttributePracticeTouch: [
 				'<div>',
 					'<p align="center">',
