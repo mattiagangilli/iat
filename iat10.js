@@ -164,42 +164,42 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 			
 			instWidth : 99, //The width of the instructions stimulus
 			
-			finalText : 'Press space to continue to the next task', 
+			finalText : 'Premi la barra spaziatrice per continuare', 
 			finalTouchText : 'Touch the bottom green area to continue to the next task',
 
 			touchMaxStimulusWidth : '50%', 
 			touchMaxStimulusHeight : '50%', 
 			bottomTouchCss: {}, //Add any CSS value you want for changing the css of the bottom touch area.
 
-			//Instructions text.
-			// You can use the following variables and they will be replaced by
-			// the name of the categories and the block's number variables:
-			// leftCategory, rightCategory, leftAttribute and rightAttribute, blockNum, nBlocks.
-			// Notice that this is HTML text.
+			// Testo delle istruzioni.
+			// Puoi usare le seguenti variabili che verranno sostituite:
+			// leftCategory, rightCategory, leftAttribute, rightAttribute, blockNum, nBlocks.
+			
 			instAttributePractice: '<div><p align="center" style="font-size:20px; font-family:arial">' +
-				'<font color="#000000"><u>Part blockNum of nBlocks </u><br/><br/></p>' +
-				'<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
-				'Put a left finger on the <b>E</b> key for items that belong to the category <font color="#0000ff">leftAttribute.</font>' +
-				'<br/>Put a right finger on the <b>I</b> key for items that belong to the category <font color="#0000ff">rightAttribute</font>.<br/><br/>' +
-				'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. ' +
-				'Press the other key to continue.<br/>' +
-				'<u>Go as fast as you can</u> while being accurate.<br/><br/></p>'+
-				'<p align="center">Press the <b>space bar</b> when you are ready to start.</font></p></div>',
+			    '<font color="#000000"><u>Parte blockNum di nBlocks </u><br/><br/></p>' +
+			    '<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
+			    'Metti un dito sinistro sul tasto <b>E</b> per gli elementi che appartengono alla categoria <font color="#0000ff">leftAttribute</font>.' +
+			    '<br/>Metti un dito destro sul tasto <b>I</b> per gli elementi che appartengono alla categoria <font color="#0000ff">rightAttribute</font>.<br/><br/>' +
+			    'Se fai un errore, apparirà una <font color="#ff0000"><b>X</b></font> rossa. ' +
+			    'Premi l’altro tasto per continuare.<br/>' +
+			    '<u>Procedi il più velocemente possibile</u> mantenendo la precisione.<br/><br/></p>' +
+			    '<p align="center">Premi la <b>barra spaziatrice</b> quando sei pronto per iniziare.</font></p></div>',
+			
 			instAttributePracticeTouch: [
-				'<div>',
-					'<p align="center">',
-						'<u>Part blockNum of nBlocks</u>',
-					'</p>',
-					'<p align="left" style="margin-left:5px">',
-						'<br/>',
-						'Put a left finger over the the <b>left</b> green area for items that belong to the category <font color="#0000ff">leftAttribute</font>.<br/>',
-						'Put a right finger over the <b>right</b> green area for items that belong to the category <font color="#0000ff">rightAttribute</font>.<br/>',
-						'Items will appear one at a time.<br/>',
-						'<br/>',
-						'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. Touch the other side. <u>Go as fast as you can</u> while being accurate.',
-					'</p>',
-					'<p align="center">Touch the <b>lower </b> green area to start.</p>',
-				'</div>'
+			    '<div>',
+			        '<p align="center">',
+			            '<u>Parte blockNum di nBlocks</u>',
+			        '</p>',
+			        '<p align="left" style="margin-left:5px">',
+			            '<br/>',
+			            'Metti un dito sinistro sopra l’area verde <b>sinistra</b> per gli elementi che appartengono alla categoria <font color="#0000ff">leftAttribute</font>.<br/>',
+			            'Metti un dito destro sopra l’area verde <b>destra</b> per gli elementi che appartengono alla categoria <font color="#0000ff">rightAttribute</font>.<br/>',
+			            'Gli elementi appariranno uno alla volta.<br/>',
+			            '<br/>',
+			            'Se fai un errore, apparirà una <font color="#ff0000"><b>X</b></font> rossa. Tocca l’altro lato. <u>Procedi il più velocemente possibile</u> mantenendo la precisione.',
+			        '</p>',
+			        '<p align="center">Tocca l’area verde <b>inferiore</b> per iniziare.</p>',
+			    '</div>'
 			].join('\n'),
 
 			instCategoriesPractice: '<div><p align="center" style="font-size:20px; font-family:arial">' +
