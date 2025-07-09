@@ -182,7 +182,7 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 			    '<br/>Metti un dito destro sul tasto <b>I</b> per gli elementi che appartengono alla categoria <font color="#0000ff">rightAttribute</font>.<br/><br/>' +
 			    'Se fai un errore, apparirà una <font color="#ff0000"><b>X</b></font> rossa. ' +
 			    'Premi l’altro tasto per continuare.<br/>' +
-			    '<u>Procedi il più velocemente possibile</u> mantenendo la precisione.<br/><br/></p>' +
+			    '<u>Procedi il più velocemente possibile</u> cercando di non commettere errori.<br/><br/></p>' +
 			    '<p align="center">Premi la <b>barra spaziatrice</b> quando sei pronto per iniziare.</font></p></div>',
 			
 			instAttributePracticeTouch: [
@@ -210,7 +210,7 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 			    'Gli elementi appariranno uno alla volta.<br/><br/>' +
 			    'Se fai un errore, apparirà una <font color="#ff0000"><b>X</b></font> rossa. ' +
 			    'Premi l’altro tasto per continuare.<br/>' +
-			    '<u>Procedi il più velocemente possibile</u> mantenendo la precisione.<br/><br/></p>' +
+			    '<u>Procedi il più velocemente possibile</u> cercando di non commettere errori.<br/><br/></p>' +
 			    '<p align="center">Premi la <b>barra spaziatrice</b> quando sei pronto per iniziare.</font></p></div>',
 			
 			instCategoriesPracticeTouch: [
@@ -238,7 +238,7 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 				'Ogni elemento appartiene a una sola categoria.<br/><br/>' +
 				'Se fai un errore, apparirà una <font color="#ff0000"><b>X</b></font> rossa. ' +
 				'Premi l’altro tasto per continuare.<br/>' +
-				'<u>Procedi il più velocemente possibile</u> mantenendo la precisione.<br/><br/></p>' +
+				'<u>Procedi il più velocemente possibile</u> cercando di non commettere errori.<br/><br/></p>' +
 				'<p align="center">Premi la <b>barra spaziatrice</b> quando sei pronto per iniziare.</font></p></div>',
 			
 			instFirstCombinedTouch:[
@@ -264,7 +264,7 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 				'Usa il tasto <b>E</b> per <font color="#336600">leftCategory</font> e per <font color="#0000ff">leftAttribute</font>.<br/>' +
 				'Usa il tasto <b>I</b> per <font color="#336600">rightCategory</font> e per <font color="#0000ff">rightAttribute</font>.<br/>' +
 				'Ogni elemento appartiene a una sola categoria.<br/><br/>' +
-				'<u>Procedi il più velocemente possibile</u> mantenendo la precisione.<br/><br/></p>' +
+				'<u>Procedi il più velocemente possibile</u> cercando di non commettere errori.<br/><br/></p>' +
 				'<p align="center">Premi la <b>barra spaziatrice</b> quando sei pronto per iniziare.</font></p></div>',
 			
 			instSecondCombinedTouch:[
@@ -288,7 +288,7 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 				'<b>Attenzione, le etichette hanno cambiato posizione!</b><br/>' +
 				'Usa il dito sinistro sul tasto <b>E</b> per <font color="#336600">leftCategory</font>.<br/>' +
 				'Usa il dito destro sul tasto <b>I</b> per <font color="#336600">rightCategory</font>.<br/><br/>' +
-				'<u>Procedi il più velocemente possibile</u> mantenendo la precisione.<br/><br/></p>' +
+				'<u>Procedi il più velocemente possibile</u> cercando di non commettere errori.<br/><br/></p>' +
 				'<p align="center">Premi la <b>barra spaziatrice</b> quando sei pronto per iniziare.</font></p></div>',
 			
 			instSwitchCategoriesTouch: [
