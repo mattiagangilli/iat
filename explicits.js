@@ -60,7 +60,7 @@ define(['questAPI'], function(Quest){
         stem: 'Quanti anni hai?',
         answers: (function(){
             let ans = [];
-            for (let i = 10; i <= 100; i++) {
+            for (let i = 18; i <= 100; i++) {
                 ans.push({text: i.toString(), value: i});
             }
             return ans;
