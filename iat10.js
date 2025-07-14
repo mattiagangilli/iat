@@ -140,7 +140,7 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 
 			remindErrorText : '<p align="center" style="font-size:1em; font-family:arial; color:#000000">' +
 			'Se commetti un errore, una <font color="#ff0000"><b>X</b></font> rossa apparirà sullo schermo. ' +
-			'Premi il tasto corretto per continuare.<p/>',
+			'Premi il tasto corretto per proseguire alla categorizzazione del successivo elemento.<p/>',
 
 			remindErrorTextTouch : '<p align="center" style="font-size:1.4em; font-family:arial; color:#000000">' +
 			'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. ' +
@@ -205,11 +205,11 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 			instCategoriesPractice: '<div><p align="center" style="font-size:20px; font-family:arial">' +
 			    '<font color="#000000"><u>Parte blockNum di nBlocks </u><br/><br/></p>' +
 			    '<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
-			    'Metti un dito sinistro sul tasto <b>E</b> per gli elementi che appartengono alla categoria <font color="#336600">leftCategory</font>. ' +
-			    '<br/>Metti un dito destro sul tasto <b>I</b> per gli elementi che appartengono alla categoria <font color="#336600">rightCategory</font>.<br/>' +
+			    'Premi con il dito indice della mano sinistra sul tasto <b>E</b> per gli elementi che appartengono alla categoria <font color="#336600">leftCategory</font>. ' +
+			    '<br/>Premi con il dito indice destro sul tasto <b>I</b> per gli elementi che appartengono alla categoria <font color="#336600">rightCategory</font>.<br/>' +
 			    'Gli elementi appariranno uno alla volta.<br/><br/>' +
-			    'Se fai un errore, apparirà una <font color="#ff0000"><b>X</b></font> rossa. ' +
-			    'Premi l’altro tasto per continuare.<br/>' +
+			    'Se commetti un errore, apparirà una <font color="#ff0000"><b>X</b></font> rossa sullo schermo. ' +
+			    'Premi il tasto corretto per proseguire alla categorizzazione del prossimo elemento.<br/>' +
 			    '<u>Procedi il più velocemente possibile</u> cercando di non commettere errori.<br/><br/></p>' +
 			    '<p align="center">Premi la <b>barra spaziatrice</b> quando sei pronto per iniziare.</font></p></div>',
 			
@@ -236,8 +236,8 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 				'Usa il tasto <b>E</b> per <font color="#336600">leftCategory</font> e per <font color="#0000ff">leftAttribute</font>.<br/>' +
 				'Usa il tasto <b>I</b> per <font color="#336600">rightCategory</font> e per <font color="#0000ff">rightAttribute</font>.<br/>' +
 				'Ogni elemento appartiene a una sola categoria.<br/><br/>' +
-				'Se fai un errore, apparirà una <font color="#ff0000"><b>X</b></font> rossa. ' +
-				'Premi l’altro tasto per continuare.<br/>' +
+				'Se commetti un errore, apparirà una <font color="#ff0000"><b>X</b></font> rossa sullo schermo. ' +
+				'Premendo il tasto corretto procederai alla categorizzazione del prossimo elemento.<br/>' +
 				'<u>Procedi il più velocemente possibile</u> cercando di non commettere errori.<br/><br/></p>' +
 				'<p align="center">Premi la <b>barra spaziatrice</b> quando sei pronto per iniziare.</font></p></div>',
 			
@@ -286,8 +286,8 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 				'<font color="#000000"><u>Parte blockNum di nBlocks </u><br/><br/></p>' +
 				'<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
 				'<b>Attenzione, le etichette hanno cambiato posizione!</b><br/>' +
-				'Usa il dito sinistro sul tasto <b>E</b> per <font color="#336600">leftCategory</font>.<br/>' +
-				'Usa il dito destro sul tasto <b>I</b> per <font color="#336600">rightCategory</font>.<br/><br/>' +
+				'Premi con il dito indice sinistro sul tasto <b>E</b> per <font color="#336600">leftCategory</font>.<br/>' +
+				'Premi con il dito indice destro sul tasto <b>I</b> per <font color="#336600">rightCategory</font>.<br/><br/>' +
 				'<u>Procedi il più velocemente possibile</u> cercando di non commettere errori.<br/><br/></p>' +
 				'<p align="center">Premi la <b>barra spaziatrice</b> quando sei pronto per iniziare.</font></p></div>',
 			
