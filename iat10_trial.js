@@ -34,7 +34,7 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 				title : {
 					media : {word : 'Black people'}, //Name of the category presented in the task.
 					css : {color:'#336600','font-size':'1.8em'}, //Style of the category title.
-					height : 4 //Used to position the "Or" in the combined block.
+					height : 4 //Used to position the "o" in the combined block.
 				},
 				stimulusMedia : [ //Stimuli content as PIP's media objects
 					{word: 'Tyron'},
@@ -285,8 +285,8 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 			    '<font color="#000000"><u>Parte blockNum di nBlocks </u><br/><br/></p>' +
 			    '<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
 			    '<b>Attenzione, le etichette hanno cambiato posizione!</b><br/>' +
-			    'Usa il dito sinistro sul tasto <b>E</b> per <font color="#336600">leftCategory</font>.<br/>' +
-			    'Usa il dito destro sul tasto <b>I</b> per <font color="#336600">rightCategory</font>.<br/><br/>' +
+			    'Metti il dito indice della mano sinistra sul tasto <b>E</b> per <font color="#336600">leftCategory</font>.<br/>' +
+			    'Metti il dito indice della mano destra sul tasto <b>I</b> per <font color="#336600">rightCategory</font>.<br/><br/>' +
 			    '<u>Procedi il più velocemente possibile</u> cercando di non commettere errori.<br/><br/></p>' +
 			    '<p align="center">Premi la <b>barra spaziatrice</b> quando sei pronto.</font></p></div>',
 			
