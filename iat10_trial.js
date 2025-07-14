@@ -235,8 +235,8 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 			    'Usa il tasto <b>E</b> per <font color="#336600">leftCategory</font> e per <font color="#0000ff">leftAttribute</font>.<br/>' +
 			    'Usa il tasto <b>I</b> per <font color="#336600">rightCategory</font> e per <font color="#0000ff">rightAttribute</font>.<br/>' +
 			    'Ogni elemento appartiene a una sola categoria.<br/><br/>' +
-			    'Se fai un errore, apparirà una <font color="#ff0000"><b>X</b></font> rossa. ' +
-			    'Premi l’altro tasto per continuare.<br/>' + 
+			    'Se commetti un errore, una <font color="#ff0000"><b>X</b></font> rossa apparirà sullo schermo. ' +
+			    'Premendo il tasto corretto procederai alla categorizzazione del prossimo elemento.<br/>' + 
 			    '<u>Procedi il più velocemente possibile</u> cercando di non commettere errori.<br/><br/></p>' +
 			    '<p align="center">Premi la <b>barra spaziatrice</b> quando sei pronto.</font></p></div>',
 			
