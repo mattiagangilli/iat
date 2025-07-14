@@ -46,11 +46,11 @@ define(['questAPI'], function(Quest){
     API.addQuestionsSet('gender', {
         inherit: 'basicSelect',
         name: 'gender',
-        stem: 'Qual è il tuo sesso?',
+        stem: 'Come descriveresti la tua identità di genere?',
         answers: [
-            {text: 'Maschio', value: 'male'},
-            {text: 'Femmina', value: 'female'},
-            {text: 'Altro', value: 'other'}
+            {text: 'Uomo', value: 'male'},
+            {text: 'Donna', value: 'female'},
+            {text: 'Non binario/Di genere non conforme', value: 'other'}
         ]
     });
 
