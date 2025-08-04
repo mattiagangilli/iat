@@ -71,23 +71,32 @@ define(['questAPI'], function(Quest){
     });
 
     /**
-     * Etnia/Razza
+     * Etnia - checkbox + campi testo separati
      */
-    API.addQuestionsSet('ethnicity', {
+    API.addQuestionsSet('ethnicityGroup', {
         inherit: 'basicQ',
         type: 'selectMulti',
         name: 'ethnicity',
-        stem: 'Come descriveresti la tua razza o etnia? Seleziona tutte le opzioni che si applicano e fornisci dettagli nello spazio sottostante. Puoi indicare più di un gruppo.',
+        stem: 'Come descriveresti la tua razza o etnia? Seleziona tutte le opzioni che si applicano.',
         answers: [
-            {text: 'Bianco', value: 'white', open: true, openText: 'Specifica'},
-            {text: 'Ispanico, Latino o Spagnolo', value: 'hispanic', open: true, openText: 'Specifica'},
-            {text: 'Nero o Afroamericano', value: 'black', open: true, openText: 'Specifica'},
-            {text: 'Asiatico', value: 'asian', open: true, openText: 'Specifica'},
-            {text: 'Nativo americano o nativo dell\'Alaska', value: 'native_american', open: true, openText: 'Specifica'},
-            {text: 'Mediorientale o nordafricano', value: 'mena', open: true, openText: 'Specifica'},
-            {text: 'Nativo hawaiano o di altre isole del Pacifico', value: 'pacific_islander', open: true, openText: 'Specifica'},
-            {text: 'Altra razza o etnia', value: 'other', open: true, openText: 'Specifica'}
+            {text: 'Bianco', value: 'white'},
+            {text: 'Ispanico, Latino o Spagnolo', value: 'hispanic'},
+            {text: 'Nero o Afroamericano', value: 'black'},
+            {text: 'Asiatico', value: 'asian'},
+            {text: 'Nativo americano o nativo dell\'Alaska', value: 'native_american'},
+            {text: 'Mediorientale o nordafricano', value: 'mena'},
+            {text: 'Nativo hawaiano o di altre isole del Pacifico', value: 'pacific_islander'},
+            {text: 'Altra razza o etnia', value: 'other'}
         ]
+    });
+
+    API.addQuestionsSet('ethnicityDetails', {
+        inherit: 'basicQ',
+        required: false,
+        type: 'text',
+        name: 'ethnicity_details',
+        stem: 'Se vuoi, specifica ulteriori dettagli sulla tua etnia (es. origini, nazionalità, ecc.):',
+        autoSubmit: false
     });
 
     /**
@@ -99,7 +108,8 @@ define(['questAPI'], function(Quest){
             questions: [
                 {inherit: 'gender'},
                 {inherit: 'age'},
-                {inherit: 'ethnicity'}
+                {inherit: 'ethnicityGroup'},
+                {inherit: 'ethnicityDetails'}
             ]
         }
     ]);
