@@ -209,7 +209,7 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 				'<br/>Premi con il dito indice della mano destra sulla <b>I</b> per gli elementi che appartengono alla categoria <font color="#336600">rightCategory</font>.<br/>' +
 				'Gli elementi appariranno uno alla volta.<br/><br/>' +
 				'Se commetti un errore, una <font color="#ff0000"><b>X</b></font> rossa apparirà sullo schermo. ' +
-				'Premendo, invece, il tasto corretto procederai alla categorizzazione del priossimo elemento.<br/>' +
+				'Premendo, invece, il tasto corretto procederai alla categorizzazione del prossimo elemento.<br/>' +
 				'<u>Esegui il test il più velocemente possibile</u> cercando di non commettere errori.<br/><br/></p>'+
 				'<p align="center">Premi la <b>barra spaziatrice</b> quando sei pronto/a per cominciare.</font></p></div>',
 			instCategoriesPracticeTouch: [
