@@ -1,4 +1,4 @@
-define(['questAPI'], function(Quest){ 
+define(['questAPI'], function(Quest){  
     let API = new Quest();
     let isTouch = API.getGlobal().$isTouch;
 
@@ -41,7 +41,7 @@ define(['questAPI'], function(Quest){
     });
 
     /**
-     * Sesso e Età
+     * Sesso
      */
     API.addQuestionsSet('gender', {
         inherit: 'basicSelect',
@@ -54,6 +54,9 @@ define(['questAPI'], function(Quest){
         ]
     });
 
+    /**
+     * Età
+     */
     API.addQuestionsSet('age', {
         inherit: 'basicDropdown',
         name: 'age',
@@ -67,7 +70,7 @@ define(['questAPI'], function(Quest){
         })()
     });
 
- /**
+    /**
      * Etnia/Razza
      */
     API.addQuestionsSet('ethnicity', {
@@ -86,16 +89,16 @@ define(['questAPI'], function(Quest){
             {text: 'Altra razza o etnia', value: 'other', open: true, openText: 'Specifica'}
         ]
     });
-    
+
     /**
-     * Sequenza del questionario
+     * Sequenza del questionario (una sola pagina)
      */
     API.addSequence([
         {
             inherit: 'basicPage',
             questions: [
                 {inherit: 'gender'},
-                {inherit: 'age'}
+                {inherit: 'age'},
                 {inherit: 'ethnicity'}
             ]
         }
