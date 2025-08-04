@@ -67,6 +67,26 @@ define(['questAPI'], function(Quest){
         })()
     });
 
+ /**
+     * Etnia/Razza
+     */
+    API.addQuestionsSet('ethnicity', {
+        inherit: 'basicQ',
+        type: 'selectMulti',
+        name: 'ethnicity',
+        stem: 'Come descriveresti la tua razza o etnia? Seleziona tutte le opzioni che si applicano e fornisci dettagli nello spazio sottostante. Puoi indicare più di un gruppo.',
+        answers: [
+            {text: 'Bianco', value: 'white', open: true, openText: 'Specifica'},
+            {text: 'Ispanico, Latino o Spagnolo', value: 'hispanic', open: true, openText: 'Specifica'},
+            {text: 'Nero o Afroamericano', value: 'black', open: true, openText: 'Specifica'},
+            {text: 'Asiatico', value: 'asian', open: true, openText: 'Specifica'},
+            {text: 'Nativo americano o nativo dell\'Alaska', value: 'native_american', open: true, openText: 'Specifica'},
+            {text: 'Mediorientale o nordafricano', value: 'mena', open: true, openText: 'Specifica'},
+            {text: 'Nativo hawaiano o di altre isole del Pacifico', value: 'pacific_islander', open: true, openText: 'Specifica'},
+            {text: 'Altra razza o etnia', value: 'other', open: true, openText: 'Specifica'}
+        ]
+    });
+    
     /**
      * Sequenza del questionario
      */
@@ -76,6 +96,7 @@ define(['questAPI'], function(Quest){
             questions: [
                 {inherit: 'gender'},
                 {inherit: 'age'}
+                {inherit: 'ethnicity'}
             ]
         }
     ]);
