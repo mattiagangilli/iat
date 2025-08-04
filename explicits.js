@@ -77,7 +77,7 @@ define(['questAPI'], function(Quest){
         inherit: 'basicQ',
         type: 'selectMulti',
         name: 'ethnicity',
-        stem: 'Come descriveresti la tua razza o etnia? Seleziona tutte le opzioni che si applicano.',
+        stem: 'Come descriveresti la tua razza o etnia? Seleziona tutte le opzioni che ritieni opportune.',
         answers: [
             {text: 'Bianco', value: 'white'},
             {text: 'Ispanico, Latino o Spagnolo', value: 'hispanic'},
