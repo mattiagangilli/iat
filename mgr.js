@@ -220,17 +220,7 @@ define(['managerAPI',
             },
 
            { inherit: 'uploading' },
-            
-            // Second run (fresh round)
-            { inherit: 'intro_2' },
-            {
-                mixer: 'wrapper',
-                data: [
-                    { inherit: 'raceiat_instructions' },
-                    { inherit: 'raceiat_2' }
-                ]
-            },
-
+    
             { inherit: 'uploading' },
             { inherit: 'lastpage' },
             { inherit: 'redirect' }
